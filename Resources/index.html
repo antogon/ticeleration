@@ -3,24 +3,31 @@
 		<!--Include all css headers here.-->
 		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="css/layout-default-latest.css" type="text/css" media="all" />
-	</head>
-	<body style="background-color:#FFF;margin:0">
-		<div class="ui-layout-center">Some content here</div>
-		<div class="ui-layout-north">
-			<script type="text/x-handlebars" data-template-name="title-panel">
-		      <h1>{{title}}</h1>
-		    </script>
-		    <div id="#titlePanel"></div>
-		</div>
-		<div class="ui-layout-south">Maybe a footer here</div>
-		<div class="ui-layout-east">Maybe another menu bar here</div>
-		<div class="ui-layout-west">Maybe a menu bar here</div>
 		<!--Include all external javascript headers here-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 		<script src="js/jquery.layout.js" type="text/javascript"></script>
-		<!--Include the framework-->
-		<script src="js/ember-0.9.2.min.js" type="text/javascript"></script>
+		<!--Include Handlebars-->
+		<script src="js/handlebars-1.0.0.beta.4.js" type="text/javascript"></script>
+		<!-- <script type="text/javascript">
+			$(function(){var tSource = $('#title-template').html();
+			var temp = Handlebars.compile(tSource);
+			var context = {title: "Template"};
+			$('#title').html(temp(context).toString());
+			});
+		</script> -->
+	</head>
+	<body style="background-color:#FFF;margin:0">
+		<div class="ui-layout-center">Some content here</div>
+		<div class="ui-layout-north">
+			<script type="text/x-handlebars-template" id="title-template">
+		      	{{title}}
+		    </script>
+		    <div id="title"></div>
+		</div>
+ 		<div class="ui-layout-south">Maybe a footer here</div>
+ 		<div class="ui-layout-east">Maybe another menu bar here</div>
+		<div class="ui-layout-west">Maybe a menu bar here</div>
 		<!--Include the initial javascript file to run here-->
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>
