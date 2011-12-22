@@ -23,8 +23,8 @@
 	Titanium.UI.setMenu(new_menu);
 
 // Populate data
-	var tSource = $('#title-template').html();
+	var tSource = $('#north-template').html();
 	var temp = Handlebars.compile(tSource);
-	var context = {title: "Template"};
-	$('#title').html(temp(context).toString());
+	var context = {north: "Template"};
+	$('#north').html(temp(context).toString());
 

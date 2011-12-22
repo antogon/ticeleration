@@ -18,16 +18,34 @@
 		</script> -->
 	</head>
 	<body style="background-color:#FFF;margin:0">
-		<div class="ui-layout-center">Some content here</div>
-		<div class="ui-layout-north">
-			<script type="text/x-handlebars-template" id="title-template">
-		      	{{title}}
+		<div class="ui-layout-center">
+			<script type="text/x-handlebars-template" id="center-template">
+		      	{{center}}
 		    </script>
-		    <div id="title"></div>
+		    <div id="center"></div>
 		</div>
- 		<div class="ui-layout-south">Maybe a footer here</div>
- 		<div class="ui-layout-east">Maybe another menu bar here</div>
-		<div class="ui-layout-west">Maybe a menu bar here</div>
+		<div class="ui-layout-north">
+			<script type="text/x-handlebars-template" id="north-template">
+		      	<h1>{{north}}</h1>
+		    </script>
+		    <div id="north"></div>
+		</div>
+ 		<div class="ui-layout-south">
+ 			<script type="text/x-handlebars-template" id="south-template">
+		      	{{south}}
+		    </script>
+		    <div id="south"></div></div>
+ 		<div class="ui-layout-east">
+			<script type="text/x-handlebars-template" id="east-template">
+		      	{{east}}
+		    </script>
+		    <div id="east"></div></div>
+		<div class="ui-layout-west">
+			<script type="text/x-handlebars-template" id="west-template">
+		      	{{west}}
+		    </script>
+		    <div id="west"></div>
+		</div>
 		<!--Include the initial javascript file to run here-->
 		<script src="js/main.js" type="text/javascript"></script>
 	</body>
