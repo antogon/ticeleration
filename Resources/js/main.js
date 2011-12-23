@@ -3,11 +3,6 @@ var Ti = {
 	fs : Titanium.Filesystem
 };
 
-// Configure the layout here
-$('body').layout({
-	applyDefaultStyles : true
-});
-
 function resetWindowPosition()
 {
 	var currentWindow = Titanium.UI.getMainWindow();
@@ -38,11 +33,30 @@ function loadTitleBar(titleString)
 	$('#north').html(temp(context).toString());
 }
 
+function loadContentPanel(filePath)
+{
+	var tSource = $('#center-template').html();
+	var temp = Handlebars.compile(tSource);
+	var file = Ti.fs.getFile(Titanium.Filesystem.getResourcesDirectory(), filePath);
+	if(file.exists())
+	{
+		var context = {
+			center : file.read().toString()
+		};
+		$('#center').html(temp(context).toString());
+	}
+}
+
 function initialize()
 {
 	resetWindowPosition();
 	loadMenuBar();
 	loadTitleBar("Template");
+	loadContentPanel("page1.html");
 }
 
+// Configure the layout here
+$('body').layout({
+	applyDefaultStyles : true
+});
 initialize();
